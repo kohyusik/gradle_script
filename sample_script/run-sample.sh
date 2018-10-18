@@ -3,6 +3,7 @@ SERVICE_NAME = @service.name@
 PATH_TO_JAR = @jar.path@
 PID_PATH_NAME = @pid.path@
 JAVA_OPTS="-server -Dspring.profiles.active=dev"
+
 case $1 in
     start)
         echo "Starting $SERVICE_NAME ..."
