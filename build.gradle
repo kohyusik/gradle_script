@@ -44,7 +44,7 @@ task copyTask(type: Copy) {
         println properties
     }
 
-    from('bin') {
+    from('sample_script') {
         include '**/*.sh'
         rename (/(.+)-sample/, '$1')
     }
