@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
-SERVICE_NAME = @service.name@
-PATH_TO_JAR = @jar.path@
-PID_PATH_NAME = @pid.path@
+SERVICE_NAME=@service.name@
+PATH_TO_JAR=@jar.path@
+PID_PATH_NAME=@pid.path@
 JAVA_OPTS="-server -Dspring.profiles.active=dev"
 
 case $1 in
+    run)
+        echo "Starting $SERVICE_NAME ..."
+        if [ ! -f $PID_PATH_NAME ]; then
+            java $JAVA_OPTS -jar $PATH_TO_JAR
+        else
+            echo "$SERVICE_NAME is already running ..."
+        fi
+    ;;
     start)
         echo "Starting $SERVICE_NAME ..."
         if [ ! -f $PID_PATH_NAME ]; then
