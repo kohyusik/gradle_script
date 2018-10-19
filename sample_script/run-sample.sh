@@ -3,6 +3,7 @@ SERVICE_NAME=@service.name@
 PATH_TO_JAR=@jar.path@
 PID_PATH_NAME=@pid.path@
 JAVA_OPTS="-server -Dspring.profiles.active=dev"
+TEST_PR=prtest
 
 case $1 in
     run)
